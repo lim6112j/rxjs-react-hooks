@@ -1,4 +1,4 @@
-import React, {useState, useEffect, cloneElement} from 'react'
+import React, {useState, useEffect, cloneElement, Fragment} from 'react'
 import { components } from './template/components'
 
 const useObservable = (observable) => {
@@ -9,10 +9,14 @@ const useObservable = (observable) => {
   }, [observable])
   return state
 }
-const renderItem = (item) => {
-  const ele = components[item.type] ? cloneElement(components[item.type], [{key:item.key}]) : null;
-  return ele;
-}
+const renderItem = (item) => item.key ? 
+  (
+    <Fragment key={item.key}>
+      {components[item.type]}
+    </Fragment>
+  )
+  :
+  null;
 const renderItems = (items) => items.map(renderItem)
 
 const TFactory2 = (props) => {

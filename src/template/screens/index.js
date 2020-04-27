@@ -46,6 +46,7 @@ export const workshop2 = {
   items: [
     {
       title: "Card 1",
+      key: '1',
       details: {
         // ...more info
       },
@@ -53,6 +54,7 @@ export const workshop2 = {
     },
     {
       title: "Card 2",
+      key: '2',
       details: {
         // ...more info
       },
@@ -60,6 +62,7 @@ export const workshop2 = {
     },
     {
       title: "Card 3",
+      key: '3',
       details: {
         // ...more info
       },
@@ -67,6 +70,7 @@ export const workshop2 = {
     },
     {
       title: "Card 4",
+      key: '4',
       details: {
         // ...more info
       },
@@ -82,6 +86,7 @@ export const workshop3 = {
   items: [
     {
       title: "Card 1",
+      key: '1',
       details: {
         // ...more info
       },
@@ -89,6 +94,7 @@ export const workshop3 = {
     },
     {
       title: "Card 2",
+      key: '2',
       details: {
         // ...more info
       },
@@ -96,6 +102,7 @@ export const workshop3 = {
     },
     {
       title: "Card 3",
+      key: '3',
       details: {
         // ...more info
       },
@@ -103,6 +110,7 @@ export const workshop3 = {
     },
     {
       title: "Card 4",
+      key: '4',
       details: {
         // ...more info
       },
