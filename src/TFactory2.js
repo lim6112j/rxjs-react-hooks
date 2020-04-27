@@ -1,10 +1,6 @@
-import React, {useState, useEffect} from 'react'
-const components = {
-  A: <div> component - div </div>,
-  B: <div> component - text </div>,
-  C: <div> component - card </div>,
-  D: <button> component - button </button>
-}
+import React, {useState, useEffect, cloneElement} from 'react'
+import { components } from './template/components'
+
 const useObservable = (observable) => {
   const [state, setState] = useState()
   useEffect(() => {
@@ -13,7 +9,10 @@ const useObservable = (observable) => {
   }, [observable])
   return state
 }
-const renderItem = (item) => components[item.type]
+const renderItem = (item) => {
+  const ele = components[item.type] ? cloneElement(components[item.type], [{key:item.key}]) : null;
+  return ele;
+}
 const renderItems = (items) => items.map(renderItem)
 
 const TFactory2 = (props) => {
