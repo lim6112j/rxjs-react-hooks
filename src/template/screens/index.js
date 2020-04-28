@@ -1,7 +1,5 @@
 const handleChangeFunc = (fn) => (ev) => {
   const evtarget = ev.target;
-  // console.log("new value", evtarget.value);
-  // console.log("new key, ", ev.target.getAttribute('tag'))
   const obj = {};
   const key = evtarget.getAttribute('tag');
   obj[key] = {
@@ -10,6 +8,7 @@ const handleChangeFunc = (fn) => (ev) => {
     };
   fn({obj});
 };
+
 const screens = {
   workshop1: {
   id: 'workshop1',

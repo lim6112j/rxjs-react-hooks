@@ -40,9 +40,7 @@ const Main = (props) => {
     history.push(sceneNum)
     console.log(history)
   }
-  // const saveSceneState = (obj) => {
-  //   setState(obj.state)
-  // }
+
   const currentScene = W.workflow[sceneNum].scene;
   return (
     <TemplateContext.Provider value={ctxHook}>

@@ -15,8 +15,6 @@ const getObservables = (val) => {
 }
 
 function Screen(props) {
-  // console.log('screen props')
-  // console.log(props.templateData.id)
   const [state, setState] = useState(
     props.templateData ? 
     {...initialState, templete: props.templateData.id, templateData: getObservables(props.templateData.id)} : 
@@ -27,30 +25,9 @@ function Screen(props) {
     console.log('screen useEffect')
     console.log(state.template)
   })
-  // const options = Object.keys(S);
-
-  // const renderOptions = (options) => options.map((option,i) => <option value={option} key={i}>{option}</option>);
-  // const handleChange = (ev) => {
-  //   const val = ev.target.value;
-  //   setState({
-  //   [ev.target.name]: val,
-  //   templateData: getObservables(val)
-  // })}
 
   return (
     <div className="Main">
-      {/* <h1>RxJS with React</h1> */}
-      {/* <TFactory /> */}
-      {/* <select 
-        className="custom-select" 
-        style= {{width:"200px"}} 
-        name="template" 
-        value={state['template']} 
-        onChange={handleChange}>
-        <option disabled hidden value=''></option>
-        {renderOptions(options)}
-      </select> */}
- 
       <TFactory templateData={ getObservables(props.templateData.id)} handleChange={handleChange}/>
       <div hidden={!props.isLast}> 마지막 페이지 </div>
       <div hidden={!props.isFirst}> 첫번째 페이지</div>
