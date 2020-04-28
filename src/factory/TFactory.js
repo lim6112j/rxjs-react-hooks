@@ -12,18 +12,18 @@ const useObservable = (observable) => {
 const renderItem = (props) => (item) => item.key ? 
   (
     <Fragment key={item.key}>
-      {React.cloneElement(components[item.type], {handleChange: props.handleChange})}
+      {React.cloneElement(components[item.type], {handleChange: props.handleChange, tag: item.key})}
     </Fragment>
   )
   :
   null;
 const renderItems = (props, items) => items.map(renderItem(props))
 
-const TFactory2 = (props) => {
+const TFactory = (props) => {
   let items = useObservable(props.templateData) || ['placeholder']
   return (
     <div>{renderItems(props, items)}</div>
   )
 }
 
-export default TFactory2
+export default TFactory

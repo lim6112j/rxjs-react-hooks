@@ -7,11 +7,12 @@ const screens = {
   description: 'workshop process 1',
   handleChange: ev => {
     console.log("new value", ev.target.value);
+    console.log("new key, ", ev.target.getAttribute('tag'))
   },
   items: [
     {
       title: "Card 1",
-      key: '1',
+      key: 'cmp 1 of tmp 1',
       details: {
         // ...more info
       },
@@ -19,7 +20,7 @@ const screens = {
     },
     {
       title: "Card 2",
-      key: '2',
+      key: 'cmp 2 of tmp 1',
       details: {
         // ...more info
       },
@@ -27,7 +28,7 @@ const screens = {
     },
     {
       title: "Card 3",
-      key: '3',
+      key: 'cmp 3 of temp 1',
       details: {
         // ...more info
       },
@@ -35,7 +36,7 @@ const screens = {
     },
     {
       title: "Card 4",
-      key: '4',
+      key: 'cpm 3 of temp 1',
       details: {
         // ...more info
       },
@@ -49,10 +50,14 @@ const screens = {
     createdAt: '20200411',
     updatedAt: '20200511',
     description: 'workshop process 1',
+    handleChange: ev => {
+      console.log("new value", ev.target.value);
+      console.log("new key, ", ev.target.getAttribute('tag'))
+    },
     items: [
       {
         title: "Card 1",
-        key: '1',
+        key: 'cpm 1 of temp 2',
         details: {
           // ...more info
         },
@@ -60,7 +65,7 @@ const screens = {
       },
       {
         title: "Card 2",
-        key: '2',
+        key: 'cpm 2 of temp 2',
         details: {
           // ...more info
         },
@@ -68,7 +73,7 @@ const screens = {
       },
       {
         title: "Card 3",
-        key: '3',
+        key: 'cpm 3 of temp 2',
         details: {
           // ...more info
         },
@@ -76,7 +81,7 @@ const screens = {
       },
       {
         title: "Card 4",
-        key: '4',
+        key: 'cpm 4 of temp 2',
         details: {
           // ...more info
         },
@@ -90,10 +95,14 @@ const screens = {
     createdAt: '20200411',
     updatedAt: '20200511',
     description: 'workshop process 1',
+    handleChange: ev => {
+      console.log("new value", ev.target.value);
+      console.log("new key, ", ev.target.getAttribute('tag'))
+    },
     items: [
       {
         title: "Card 1",
-        key: '1',
+        key: 'cpm 1 of temp 3',
         details: {
           // ...more info
         },
@@ -101,7 +110,7 @@ const screens = {
       },
       {
         title: "Card 2",
-        key: '2',
+        key: 'cpm 2 of temp 3',
         details: {
           // ...more info
         },
@@ -109,7 +118,7 @@ const screens = {
       },
       {
         title: "Card 3",
-        key: '3',
+        key: 'cpm 3 of temp 3',
         details: {
           // ...more info
         },
@@ -117,7 +126,7 @@ const screens = {
       },
       {
         title: "Card 4",
-        key: '4',
+        key: 'cpm 4 of temp 3',
         details: {
           // ...more info
         },

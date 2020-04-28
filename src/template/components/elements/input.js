@@ -6,6 +6,7 @@ function Input(props) {
     <div className="card">
       <label>name : </label>
       <input 
+        tag={props.tag}
         className="composition" 
         name="name" 
         onChange={props.handleChange}
