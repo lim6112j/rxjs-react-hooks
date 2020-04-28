@@ -1,6 +1,6 @@
-import React, {useState, useEffect, cloneElement, Fragment} from 'react'
+import React, {useState, useEffect, cloneElement, Fragment, useContext} from 'react'
 import { components } from '../template/components'
-
+import TemplateContext from '../context/templateContext';
 const useObservable = (observable) => {
   const [state, setState] = useState()
   useEffect(() => {

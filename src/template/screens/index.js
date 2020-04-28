@@ -1,3 +1,15 @@
+const handleChangeFunc = (fn) => (ev) => {
+  const evtarget = ev.target;
+  // console.log("new value", evtarget.value);
+  // console.log("new key, ", ev.target.getAttribute('tag'))
+  const obj = {};
+  const key = evtarget.getAttribute('tag');
+  obj[key] = {
+    value: evtarget.value,
+    type: evtarget.type
+    };
+  fn({obj});
+};
 const screens = {
   workshop1: {
   id: 'workshop1',
@@ -5,10 +17,7 @@ const screens = {
   createdAt: '20200411',
   updatedAt: '20200511',
   description: 'workshop process 1',
-  handleChange: ev => {
-    console.log("new value", ev.target.value);
-    console.log("new key, ", ev.target.getAttribute('tag'))
-  },
+  handleChange: handleChangeFunc,
   items: [
     {
       title: "Card 1",
@@ -50,10 +59,7 @@ const screens = {
     createdAt: '20200411',
     updatedAt: '20200511',
     description: 'workshop process 1',
-    handleChange: ev => {
-      console.log("new value", ev.target.value);
-      console.log("new key, ", ev.target.getAttribute('tag'))
-    },
+    handleChange: handleChangeFunc,
     items: [
       {
         title: "Card 1",
@@ -95,10 +101,7 @@ const screens = {
     createdAt: '20200411',
     updatedAt: '20200511',
     description: 'workshop process 1',
-    handleChange: ev => {
-      console.log("new value", ev.target.value);
-      console.log("new key, ", ev.target.getAttribute('tag'))
-    },
+    handleChange: handleChangeFunc,
     items: [
       {
         title: "Card 1",

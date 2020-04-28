@@ -1,6 +1,7 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import TemplateContext from '../../../context/templateContext';
 function Input(props) {
+  const [data, setData] = useContext(TemplateContext);
   return (
     <>
     <div className="card">
@@ -9,7 +10,7 @@ function Input(props) {
         tag={props.tag}
         className="composition" 
         name="name" 
-        onChange={props.handleChange}
+        onChange={props.handleChange(setData)}
       />
     </div>
   </>
