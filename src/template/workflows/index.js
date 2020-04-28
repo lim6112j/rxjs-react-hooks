@@ -7,6 +7,4 @@ export const workflow = [
   {scene: workshop1, state: {}},
   {scene: workshop2, state: {}}
 ]
-export const workflow2 = [
-  
-]
+// more workflows
