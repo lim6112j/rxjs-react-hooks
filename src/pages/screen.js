@@ -13,18 +13,16 @@ const initialState = {
 const getObservables = (val) => {
   return interval(delaytime).pipe(map(i => S[val].items.slice(0, i + 1))) 
 }
-const getObservablesWithitems = (items) => {
-  return interval(delaytime).pipe(map(i => items.slice(0, i + 1))) 
-}
+
 function Screen(props) {
   // console.log('screen props')
   // console.log(props.templateData.id)
   const [state, setState] = useState(
     props.templateData ? 
-    {...initialState, templete: Object.keys(props.templateData)[0],templateData: getObservables(props.templateData.id)} : 
+    {...initialState, templete: props.templateData.id, templateData: getObservables(props.templateData.id)} : 
     initialState
     );
-  // const handleChange = S['handleChange'];
+  const handleChange = props.templateData.handleChange;
   useEffect(() => {
     console.log('screen useEffect')
     console.log(state.template)
@@ -53,7 +51,7 @@ function Screen(props) {
         {renderOptions(options)}
       </select> */}
  
-      <TFactory templateData={ getObservables(props.templateData.id)} />
+      <TFactory templateData={ getObservables(props.templateData.id)} handleChange={handleChange}/>
       <div hidden={!props.isLast}> 마지막 페이지 </div>
       <div hidden={!props.isFirst}> 첫번째 페이지</div>
     </div>
