@@ -19,8 +19,8 @@ const Main = (props) => {
   const [state, setState] = useState(initialState);
   const history = useHistory();
   const {sceneNum, isFirst, isLast} = state;
-  const ctxHook = [state.data, (v) => _(v).map(o => state.data = ({...state.data, ...o})).map(log).value()];
-
+  const ctxHook = [state.data, (v) => _(v).map(o => state.data = {...state.data, ...o}).map(log).value()];
+  // console.log(state.W)
   useEffect(
     () => {
       console.log(props);
