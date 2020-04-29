@@ -1,6 +1,7 @@
-import React from 'react';
-
+import React, {useContext} from 'react';
+import TemplateContext from '../../../context/templateContext';
 const Radio = (props) => {
+  const [data, setData] = useContext(TemplateContext)
   const hasOptions = props && props.userDefined && props.userDefined.options;
   const hasText = props && props.userDefined && props.userDefined.text;
   const content = props && props.userDefined && props.userDefined.text || 'fill the tempate data';
@@ -8,7 +9,12 @@ const Radio = (props) => {
   const renderItems = (items) => items.map((item, i) => (
     <div className="radio">
     <label>
-      <input type="radio" value={item} checked={i ===0 ? true : false} />
+      <input 
+        tag={props.tag}
+        type="radio" 
+        value={item}  
+        onChange={props.handleChange(setData)}
+        />
       {item}
     </label>
     </div>
