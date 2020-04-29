@@ -5,7 +5,8 @@ function TextArea(props) {
   const content = props && props.userDefined && props.userDefined.text || 'fill the tempate data';
   return (
     <div className="card">
-      <label>textArea</label>
+      <h1>{content}</h1>
+      <br/>
       <textarea 
         tag={props.tag}
         className="feature-box"

@@ -15,7 +15,11 @@ const screens = {
       details: {
         // ...more info
       },
-      type: "D"
+      type: "D",
+      userDefined: {
+        text: 'Question : What is your favorite fruit???',
+        options: ['apple', 'banana', 'kiwi', 'all']
+      }
     },
     {
       title: "Card 2",
@@ -23,7 +27,10 @@ const screens = {
       details: {
         // ...more info
       },
-      type: "B"
+      type: "B",
+      userDefined: {
+        text: 'Question : Is the Earch flat???'
+      }
     },
     {
       title: "Card 3",
@@ -33,7 +40,8 @@ const screens = {
       },
       type: "C",
       userDefined: {
-        options: ['defined option 1', 'defined option 2']
+        text: 'Question : Do you believe in Evolution ??',
+        options: ['Yes, Absolutely', 'No, just a lie']
       }
     },
     {
@@ -42,7 +50,10 @@ const screens = {
       details: {
         // ...more info
       },
-      type: "A"
+      type: "A",
+      userDefined: {
+        text: 'Question  : Is the Earch rolling ???'
+      }
     }
   ]
   },
@@ -68,7 +79,10 @@ const screens = {
         details: {
           // ...more info
         },
-        type: "A"
+        type: "B",
+        userDefined: {
+          text: 'Question : Does the Universe expand itself ???'
+        }
       },
       {
         title: "Card 3",
@@ -84,7 +98,10 @@ const screens = {
         details: {
           // ...more info
         },
-        type: "A"
+        type: "A",
+        userDefined: {
+          text: 'Question  : What is your life treasure  ???'
+        }
       }
     ]
   },
@@ -126,7 +143,11 @@ const screens = {
         details: {
           // ...more info
         },
-        type: "C"
+        type: "D",
+        userDefined: {
+          text: 'Question : What is your favorite song',
+          options: ['Yellow', 'The great gig in the sky', 'Hello', 'all']
+        }
       }
     ]
   }

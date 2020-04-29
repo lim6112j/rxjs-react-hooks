@@ -1,10 +1,11 @@
 import React, {useState, useEffect, createContext} from 'react';
 import _ from 'lodash';
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link, Switch, Route} from 'react-router-dom';
 import * as W from '../template/workflows';
 import Screen from './screen';
 import '../css/style.css';
 import TemplateContext from '../context/templateContext';
+import TemplateViewer from './templateViewer';
 const log = (l) => console.log(l);
 let data = {};
 const initialState = {
@@ -44,15 +45,22 @@ const Main = (props) => {
   const currentScene = W.workflow[sceneNum].scene;
   return (
     <TemplateContext.Provider value={ctxHook}>
-      <h1 className="title">workflow</h1>
-      <br/><br/>
-      <hr/>
-      <br/>
-      <div className="center">
-        <button className="btn" onClick={onClickBefore}>before</button>
-        <button className="btn" onClick={onClickNext}>next</button>
-      </div>
-      <Screen templateData={currentScene} isLast={isLast} isFirst={isFirst}/>
+      <h1 className="title">workflow</h1><br/><br/><hr/><br/>
+      <Link to="/">Home</Link>
+      <span> </span>
+      <Link to="/template">template</Link>
+      <Switch>
+        <Route path="/template">
+          <TemplateViewer />
+        </Route>
+        <Route path="/">
+          <div className="center">
+            <button className="btn" onClick={onClickBefore}>before</button>
+            <button className="btn" onClick={onClickNext}>next</button>
+          </div>
+          <Screen templateData={currentScene} isLast={isLast} isFirst={isFirst}/>
+        </Route>
+      </Switch>
     </TemplateContext.Provider>
   )
 }
