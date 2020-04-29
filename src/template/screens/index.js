@@ -31,7 +31,10 @@ const screens = {
       details: {
         // ...more info
       },
-      type: "C"
+      type: "C",
+      userDefined: {
+        options: ['defined option 1', 'defined option 2']
+      }
     },
     {
       title: "Card 4",

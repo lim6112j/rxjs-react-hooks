@@ -1,3 +1,5 @@
 import Input from './input';
 import TextArea from './textarea';
-export {Input, TextArea};
+import Button from './button';
+import Select from './select';
+export {Input, TextArea, Button, Select};

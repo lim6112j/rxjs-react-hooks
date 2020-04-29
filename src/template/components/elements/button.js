@@ -1,18 +1,18 @@
 import React, { useContext } from 'react'
 import TemplateContext from '../../../context/templateContext';
-function Input(props) {
+function Button(props) {
   const [data, setData] = useContext(TemplateContext);
   return (
     <div className="card">
       <label>name : </label>
-      <input 
+      <button
         tag={props.tag}
-        className="composition" 
-        name="name" 
-        onChange={props.handleChange(setData)}
+        className="btn"
+        name="name"
+        onClick={props.handleChange(setData)}
       />
     </div>
   )
 }
 
-export default Input;
+export default Button;

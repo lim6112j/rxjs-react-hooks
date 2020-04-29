@@ -12,7 +12,7 @@ const useObservable = (observable) => {
 const renderItem = (props) => (item) => item.key ? 
   (
     <Fragment key={item.key}>
-      {React.cloneElement(components[item.type], {handleChange: props.handleChange, tag: item.key})}
+      {cloneElement(components[item.type], {handleChange: props.handleChange, tag: item.key, userDefined: item.userDefined})}
     </Fragment>
   )
   :
