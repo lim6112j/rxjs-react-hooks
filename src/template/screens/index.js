@@ -1,4 +1,4 @@
-import handleChangeFunc from './onChangeHelper';
+import handleChangeFunc from '../../utils/onChangeHelper';
 
 const screens = {
   workshop1: {

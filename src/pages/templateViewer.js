@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { of, interval, Scheduler, animationFrameScheduler } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import objToStr from './objToStrHelper';
+import objToStr from '../utils/objToStrHelper';
 import * as W from '../template/workflows';
 const delay = 0;
 const DURATION = 1000
