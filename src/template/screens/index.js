@@ -62,7 +62,7 @@ const screens = {
     name: '워크샵2',
     createdAt: '20200411',
     updatedAt: '20200511',
-    description: 'workshop process 1',
+    description: 'workshop process 2',
     handleChange: handleChangeFunc,
     items: [
       {
@@ -110,7 +110,7 @@ const screens = {
     name: '워크샵3',
     createdAt: '20200411',
     updatedAt: '20200511',
-    description: 'workshop process 1',
+    description: 'workshop process 3',
     handleChange: handleChangeFunc,
     items: [
       {

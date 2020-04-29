@@ -11,7 +11,7 @@ const start = animationFrameScheduler.now();
 
 const renderInner = (items) => items.map(item => (
   <>
-  <h3 style={{color : item.userDefined ? "" : "red"}}>{item.key} - {objToStr(item.userDefined)}</h3>
+  <h3 style={{color : item.userDefined ? "" : "red"}}>key: {item.key} - type: {item.type} - {objToStr(item.userDefined)}</h3>
   </>
 ))
 const renderItems = (items) => items.map(item => (

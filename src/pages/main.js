@@ -7,19 +7,19 @@ import '../css/style.css';
 import TemplateContext from '../context/templateContext';
 import TemplateViewer from './templateViewer';
 const log = (l) => console.log(l);
-let data = {};
+
 const initialState = {
   sceneNum: 0,
   isFirst: true,
   isLast: false,
-  data: {}
+  data: {},
+  W: W.workflow
 };
 const Main = (props) => {
-  // console.log(W.workflow)
   const [state, setState] = useState(initialState);
   const history = useHistory();
   const {sceneNum, isFirst, isLast} = state;
-  const ctxHook = [data, (v) => _(v).map(o => data = ({...data, ...o})).map(log).value()];
+  const ctxHook = [state.data, (v) => _(v).map(o => state.data = ({...state.data, ...o})).map(log).value()];
 
   useEffect(
     () => {
@@ -29,20 +29,17 @@ const Main = (props) => {
   )
   const onClickBefore = () => {
     console.log('before')
-    setState({...state.data, data})
     history.push(sceneNum)
-    sceneNum !== 0 ? setState({sceneNum: sceneNum - 1, isFist: false}) : setState({...state, isFirst: true})
+    sceneNum !== 0 ? setState({...state, sceneNum: sceneNum - 1, isFist: false}) : setState({...state, isFirst: true})
     console.log(history)
   }
   const onClickNext = () => {
     console.log('next')
-    setState({...state.data, data})
-    sceneNum < W.workflow.length-1 ? setState({sceneNum: sceneNum + 1, isLast: false}) : setState({...state, isLast: true})
+    sceneNum < state.W.length-1 ? setState({...state, sceneNum: sceneNum + 1, isLast: false}) : setState({...state, isLast: true})
     history.push(sceneNum)
     console.log(history)
   }
-
-  const currentScene = W.workflow[sceneNum].scene;
+  const currentScene = state.W[sceneNum].scene;
   return (
     <TemplateContext.Provider value={ctxHook}>
       <h1 className="title">workflow</h1><br/><br/><hr/><br/>
