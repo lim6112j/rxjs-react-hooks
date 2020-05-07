@@ -20,6 +20,8 @@ const Main = (props) => {
   const [ctx, setCtx] = useState(initialCtx);
   const history = useHistory();
   const {sceneNum, isFirst, isLast} = ctx;
+  // child use it's own setState for render itself , ctxHook only get the child's data without rerendering whole page.
+  // so I don't use setCtx but copy new data array from ctx.data + child data, no mutation of course.
   const ctxHook = [ctx.data, (v) => _(v).map(o => ctx.data = {...ctx.data, ...o}).map(log).value()];
   // console.log(ctx.W)
   useEffect(
