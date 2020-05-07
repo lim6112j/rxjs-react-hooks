@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import TemplateContext from '../../../context/templateContext';
 function Select(props) {
   const [data, setData] = useContext(TemplateContext);
+  const [state, setState] =useState('');
   const hasOptions = props && props.userDefined && props.userDefined.options;
   const hasText = props && props.userDefined && props.userDefined.text;
   const options = hasOptions || ['fill', 'the', 'template'];
@@ -13,7 +14,8 @@ function Select(props) {
       <select
         className="select"
         tag={props.tag}
-        onChange={props.handleChange(setData)}
+        value={state}
+        onChange={props.handleChange(setData, setState)}
       >
         {renderItems(options)}
       </select>

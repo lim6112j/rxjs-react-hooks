@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import TemplateContext from '../../../context/templateContext';
 function Input(props) {
   const [data, setData] = useContext(TemplateContext);
+  const [state, setState] = useState('');
   const hasData = props && props.userDefined && props.userDefined.text;
   const content =  hasData || 'fill the tempate data';
   return (
@@ -11,7 +12,8 @@ function Input(props) {
         tag={props.tag}
         className="composition"
         name="name" 
-        onChange={props.handleChange(setData)}
+        value={state}
+        onChange={props.handleChange(setData, setState)}
       />
     </div>
   )

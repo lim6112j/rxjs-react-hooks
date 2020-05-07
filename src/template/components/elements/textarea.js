@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import TemplateContext from '../../../context/templateContext';
 function TextArea(props) {
   const [data, setData] = useContext(TemplateContext);
+  const [state, setState] = useState('');
   const content = props && props.userDefined && props.userDefined.text || 'fill the tempate data';
   return (
     <div className="card">
@@ -10,8 +11,8 @@ function TextArea(props) {
       <textarea 
         tag={props.tag}
         className="feature-box"
-        // value={data}
-        onChange={props.handleChange(setData)}
+        value={state}
+        onChange={props.handleChange(setData, setState)}
       >
       </textarea>
     </div>
