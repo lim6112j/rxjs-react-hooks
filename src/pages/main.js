@@ -6,6 +6,7 @@ import Screen from './screen';
 import '../css/style.css';
 import TemplateContext from '../context/templateContext';
 import TemplateViewer from './templateViewer';
+import Definition from './definition';
 const log = (l) => console.log(l);
 
 const initialState = {
@@ -46,9 +47,14 @@ const Main = (props) => {
       <Link to="/">Home</Link>
       <span> </span>
       <Link to="/template">template</Link>
+      <span> </span>
+      <Link to="/definition">Define the template</Link>
       <Switch>
         <Route path="/template">
           <TemplateViewer />
+        </Route>
+        <Route path="/definition">
+          <Definition />
         </Route>
         <Route path="/">
           <div className="center">

@@ -6,7 +6,7 @@ const screens = {
   name: '워크샵1',
   createdAt: '20200411',
   updatedAt: '20200511',
-  description: 'workshop process 1',
+  description: '기업 인사 조직 워크샵 단계 (1 of 15) templates',
   handleChange: handleChangeFunc,
   items: [
     {
