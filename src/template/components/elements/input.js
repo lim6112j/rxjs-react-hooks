@@ -7,7 +7,7 @@ function Input(props) {
   const hasData = props && props.userDefined && props.userDefined.text;
   const content =  hasData || 'fill the tempate data';
   useEffect(() => {
-    const refresh = _.map(data, (v, k) => k === props.tag ? setState(v.value) : setState('no input yet'))
+    const refresh = _.map(data, (v, k) => k === props.tag ? setState(v.value) : null)
   }, [data, props.tag]);
   return (
     <div className="card">
