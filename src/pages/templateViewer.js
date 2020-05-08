@@ -31,7 +31,7 @@ const TemplateViewer = () => {
   useEffect(() => {
     const subscription = workflows$.subscribe(setState);
     return () => subscription.unsubscribe();
-  })
+  }, [workflows$])
   return (
   <>
   <ul> {renderItems(state)} </ul>
