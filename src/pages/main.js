@@ -7,6 +7,7 @@ import '../css/style.css';
 import TemplateContext from '../context/templateContext';
 import TemplateViewer from './templateViewer';
 import Definition from './definition';
+import Status from './status';
 const log = (l) => console.log(l);
 
 const initialCtx = {
@@ -51,7 +52,12 @@ const Main = (props) => {
       <Link to="/template">template</Link>
       <span> </span>
       <Link to="/definition">Define the template</Link>
+      <span> </span>
+      <Link to="/status">Current Status</Link>
       <Switch>
+        <Route path="/status">
+          <Status />
+        </Route>
         <Route path="/template">
           <TemplateViewer />
         </Route>
