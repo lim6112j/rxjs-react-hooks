@@ -1,16 +1,16 @@
 import React, { useContext } from 'react'
 import TemplateContext from '../../../context/templateContext';
-import useHandlers from '../../../custom-hooks/useHandlers';
+import useHandlers from './custom-hooks/useHandlers';
 function Button(props) {
   const [data, setData] = useContext(TemplateContext);
-  const handlerHook = useHandlers('onClick')
+  const onClickHandler= useHandlers('onClick')
   return (
     <div className="card">
       <button
         tag={props.tag}
         className="btn"
         name="name"
-        onClick={handlerHook('button clicked')}
+        onClick={onClickHandler('button clicked')}
       > click
       </button>
     </div>

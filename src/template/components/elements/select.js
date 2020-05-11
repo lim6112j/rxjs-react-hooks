@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import _ from 'lodash';
 import TemplateContext from '../../../context/templateContext';
-import useHandlers from '../../../custom-hooks/useHandlers';
+import useHandlers from './custom-hooks/useHandlers';
 function Select(props) {
   const [data, setData] = useContext(TemplateContext);
   const [state, setState] =useState('');
@@ -10,7 +10,7 @@ function Select(props) {
   const options = hasOptions || ['fill', 'the', 'template'];
   const renderItems = (items) => items.map(item => <option>{item}</option>)
   const content = hasText || 'fill the tempate data';
-  const handlerHook = useHandlers('onChange');
+  const onChangeHandler = useHandlers('onChange');
   useEffect(() => {
     const refresh = _.map(data, (v, k) => k === props.tag ? setState(v.value) : null)
   }, [data, props.tag]);
@@ -21,7 +21,7 @@ function Select(props) {
         className="select"
         tag={props.tag}
         value={state}
-        onChange={handlerHook(setData, setState)}
+        onChange={onChangeHandler(setData, setState)}
       >
         {renderItems(options)}
       </select>
