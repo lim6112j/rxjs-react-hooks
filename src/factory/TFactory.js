@@ -1,4 +1,4 @@
-import React, {useState, useEffect, cloneElement, Fragment, useContext} from 'react'
+import React, {useState, useEffect, cloneElement, Fragment} from 'react'
 import { components } from '../template/components'
 
 const useObservable = (observable) => {
@@ -12,7 +12,7 @@ const useObservable = (observable) => {
 const renderItem = (props) => (item) => item.key ? 
   (
     <Fragment key={item.key}>
-      {cloneElement(components[item.type], {handleChange: props.handleChange, tag: item.key, userDefined: item.userDefined})}
+      {cloneElement(components[item.type], {tag: item.key, userDefined: item.userDefined})}
     </Fragment>
   )
   :

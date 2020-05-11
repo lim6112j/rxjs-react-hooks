@@ -20,15 +20,15 @@ function Screen(props) {
     {...initialState, templete: props.templateData.id, templateData: getObservables(props.templateData.id)} : 
     initialState
     );
-  const handleChange = props.templateData.handleChange;
-  useEffect(() => {
-    console.log('screen useEffect')
-    console.log(state.template)
-  })
+  
+  // useEffect(() => {
+  //   console.log('screen useEffect')
+  //   console.log(state.template)
+  // })
 
   return (
     <div className="Main">
-      <TFactory templateData={ getObservables(props.templateData.id)} handleChange={handleChange}/>
+      <TFactory templateData={ getObservables(props.templateData.id)} />
       <div hidden={!props.isLast}> 마지막 페이지 </div>
       <div hidden={!props.isFirst}> 첫번째 페이지</div>
     </div>

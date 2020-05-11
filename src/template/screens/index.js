@@ -1,5 +1,3 @@
-import handleChangeFunc from '../../utils/onChangeHelper';
-
 const screens = {
   workshop1: {
   id: 'workshop1',
@@ -7,7 +5,6 @@ const screens = {
   createdAt: '20200411',
   updatedAt: '20200511',
   description: '기업 인사 조직 워크샵 단계 (1 of 15) templates',
-  handleChange: handleChangeFunc,
   items: [
     {
       title: "Card 1",
@@ -71,7 +68,6 @@ const screens = {
     createdAt: '20200411',
     updatedAt: '20200511',
     description: 'workshop process 2',
-    handleChange: handleChangeFunc,
     items: [
       {
         title: "Card 1",
@@ -119,7 +115,6 @@ const screens = {
     createdAt: '20200411',
     updatedAt: '20200511',
     description: 'workshop process 3',
-    handleChange: handleChangeFunc,
     items: [
       {
         title: "Card 1",

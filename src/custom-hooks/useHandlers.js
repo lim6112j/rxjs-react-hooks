@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import handlers from '../utils/handlers';
+import handlers from './handlers/handlers';
 
 const useHandlers = (keyval) => {
   return handlers[keyval];
