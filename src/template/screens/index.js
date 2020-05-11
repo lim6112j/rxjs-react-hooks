@@ -11,6 +11,14 @@ const screens = {
   items: [
     {
       title: "Card 1",
+      key: 'cmp 0 of tmp 1',
+      details: {
+        // ...more info
+      },
+      type: "E"
+    },
+    {
+      title: "Card 1",
       key: 'cmp 1 of tmp 1',
       details: {
         // ...more info
