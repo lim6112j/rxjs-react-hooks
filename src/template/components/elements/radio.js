@@ -14,9 +14,9 @@ const Radio = (props) => {
     const refresh = _.map(data, (v, k) => k === props.tag ? setState(v.value) : null)
   }, [data, props.tag])
   const renderItems = (items) => items.map((item, i) => (
-    <div className="radio">
+    <div key={i} className="radio">
     <label>
-      <input 
+      <input
         tag={props.tag}
         type="radio" 
         value={item}

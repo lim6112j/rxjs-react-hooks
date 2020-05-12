@@ -8,7 +8,7 @@ function Select(props) {
   const hasOptions = props && props.userDefined && props.userDefined.options;
   const hasText = props && props.userDefined && props.userDefined.text;
   const options = hasOptions || ['fill', 'the', 'template'];
-  const renderItems = (items) => items.map(item => <option>{item}</option>)
+  const renderItems = (items) => items.map((item,i) => <option key={i}>{item}</option>)
   const content = hasText || 'fill the tempate data';
   const onChangeHandler = useHandlers('onChange');
   useEffect(() => {

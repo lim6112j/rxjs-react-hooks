@@ -25,12 +25,7 @@ const Main = (props) => {
   // so I don't use setCtx but copy new data array from ctx.data + child data, no mutation of course.
   const ctxHook = [ctx.data, (v) => _(v).map(o => ctx.data = {...ctx.data, ...o}).map(log).value()];
   // console.log(ctx.W)
-  useEffect(
-    () => {
-      console.log(props);
-    },
-    [props]
-  )
+
   const onClickBefore = () => {
     console.log('before')
     history.push(sceneNum)
