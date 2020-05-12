@@ -8,6 +8,7 @@ import TemplateContext from '../context/templateContext';
 import TemplateViewer from './templateViewer';
 import Definition from './definition';
 import Status from './status';
+import Nodes from './node';
 const log = (l) => console.log(l);
 
 const initialCtx = {
@@ -49,6 +50,8 @@ const Main = (props) => {
       <Link to="/definition">Define the template</Link>
       <span> </span>
       <Link to="/status">Current Status</Link>
+      <span> </span>
+      <Link to="/nodes"> Nodes </Link>
       <Switch>
         <Route path="/status">
           <Status />
@@ -58,6 +61,9 @@ const Main = (props) => {
         </Route>
         <Route path="/definition">
           <Definition />
+        </Route>
+        <Route path="/nodes">
+          <Nodes />
         </Route>
         <Route path="/">
           <div className="center">
