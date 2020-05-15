@@ -1,10 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import {ajax} from 'rxjs/ajax';
 import useMousePos from './custom-hooks/useMousePos';
-const Nodes = (props) => {
-  const pos = useMousePos("movediv");
-  return <div id="movediv" style={{...styles.box, transform: `translate(${pos.x}px, ${pos.y}px)`}}> hello nodes</div>
+import useObservable from './custom-hooks/useObservable';
+const workflows$ = ajax(process.env.REACT_APP_WORKFLOW_URL);
+const Node = (props) => {
+  const pos = useMousePos();
+  const workflows = useObservable(workflows$);
+  return <div id={props.id} style={{...styles.box, transform: `translate(${pos.x}px, ${pos.y}px)`}}> {JSON.stringify(workflows)}</div>
 }
 const styles = {
   box: { borderStyle: "dotted", height: 100, width: 100}
 }
-export default Nodes;
+export default Node;

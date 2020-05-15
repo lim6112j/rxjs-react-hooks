@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { of, interval, Scheduler, animationFrameScheduler } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import objToStr from '../utils/objToStrHelper';
+import Node from './node';
 import * as W from '../template/workflows';
 const delay = 0;
 const DURATION = 1000
@@ -11,11 +12,11 @@ const start = animationFrameScheduler.now();
 
 const renderInner = (items, j) => items.map((item, i) => (
 
-  <h3 key={`${j}-${i}`} style={{color : item.userDefined ? "" : "red"}}>key: {item.key} - type: {item.type} - {objToStr(item.userDefined)}</h3>
+  <Node id={`${j}-${i}`}  key={`${j}-${i}`} style={{color : item.userDefined ? "" : "red"}}>key: {item.key} - type: {item.type} - {objToStr(item.userDefined)}</Node>
 
 ))
 const renderItems = (items) => items.map((item,i) => (
-  <div key={i}>
+  <div key={i} name="page" style={{display: "flex", flexDirection: "column"}}>
   <li >{item.scene.id || 'no id'} - {item.scene.description || 'no description'}</li>
   {renderInner(item.scene.items,i)}
   </div>
